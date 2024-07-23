@@ -216,25 +216,8 @@ namespace Klabin.Rml.ClientLogic.MachineReaders
         }
 
         /// <summary>
-        /// LogUnstableMessureMessage método é chamda quando a balança response, mas com problemas na medida
-        /// </summary>
-        /// <remarks>
-        ///     S _ S _ WeigthValue _ Unit – Valor de peso estável.
-        ///     C-28 METTLER TOLEDOIND570 Guia do usuário 30205316 | 16 | 03/2021 Comunicação
-        ///     S _ D _ WeigthValue _ Unit – Valor de peso não estável.
-        ///     S _ I – O comando é entendido, mas não pode ser executado no momento. (O terminal IND570
-        ///     está executando outro comando, como a tara.)
-        ///     S _ + – IND570 na faixa de sobrecarga.
-        ///     S _ + – IND570 na faixa de baixa carga.
-        ///     
-        ///     S _ S _ WeigthValue _ Unit – Valor de peso estável atual. Alteração de peso
-        ///     S _ D _ WeigthValue _ Unit – Valor de peso não estável.
-        ///     S _ S _ WeigthValue _ Unit – Próximo valor de peso estável.
-        ///     S_I – O comando é entendido, mas não pode ser executado neste momento. (O terminal IND570
-        ///     está executando outro comando, como tara, ou timeout porque a estabilidade não foi obtida.)
-        ///     S_L – Comando entendido, parâmetro errado
-        ///     S _ + – IND570 na faixa de sobrecarga.
-        ///     S _ + – IND570 na faixa de baixa carga.
+        ///     SI+– IND570 na faixa de sobrecarga.
+        ///     SI– IND570 na faixa de baixa carga.
         /// </remarks>
         /// <param name="rawData"></param>
         private void LogUnstableMessureMessage(string rawData)
