@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 using Klabin.Rml.Client.Resources;
+using System.Net.Http.Headers;
 
 namespace Klabin.Rml.Client
 {
